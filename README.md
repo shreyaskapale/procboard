@@ -1,2 +1,2 @@
 # procboard
-A system resource monitoring toot.
+A system resource monitoring tool.
