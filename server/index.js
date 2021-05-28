@@ -4,11 +4,7 @@ const os = require('os-utils');
 const { stdout, stderr } = require('process');
 const cors = require('cors');
 const app = express();
-
-
 app.use(cors());
-
-
 app.get('/procmem',(req,res)=>{
     
     exec("cat /proc/meminfo", (error, stdout, stderr) => {
@@ -56,47 +52,6 @@ app.get('/fullinfo',(req,res)=>{
 
 
 });
-
-
-
-
-app.get('/proccpu',(req,res)=>{
-    
-    exec("awk -f p.awk", (error, stdout, stderr) => {
-        if (error) {
-            console.log(`error: ${error.message}`);
-            return;
-        }
-        if (stderr) {
-            console.log(`stderr: ${stderr}`);
-            return;
-        }
-      
-        res.send(stdout)
-    });
-    
-
-});
-
-app.get('/ports',(req,res)=>{
-    
-    exec("awk -f p.awk", (error, stdout, stderr) => {
-        if (error) {
-            console.log(`error: ${error.message}`);
-            return;
-        }
-        if (stderr) {
-            console.log(`stderr: ${stderr}`);
-            return;
-        }
-      
-        res.send(stdout)
-    });
-    
-
-});
-
-
 
 app.listen(6900, () => {
     console.log(`http://localhost:6900`)
