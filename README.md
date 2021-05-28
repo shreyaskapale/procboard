@@ -1,2 +1,2 @@
 # procboard
-A simple system resource monitoring tool. You can integrate the graph componenets into your own dashboard.
+A simple system realtime resource monitoring tool. You can integrate the graph componenets into your own dashboard.
